@@ -50,12 +50,13 @@ def laod_tasks() -> list[dict]:
     with open('data/tasks.txt') as f:
         tasks = []
         for line in f.readlines():
-            user, title, description, deadline = line[:-1].split(', ')
+            user, title, description, deadline, completed = line[:-1].split(', ')
             tasks.append({
                 'user': user,
                 'title': title,
                 'description': description,
                 'deadline': deadline,
+                'completed': completed
             })
 
     return tasks
@@ -69,12 +70,26 @@ def create_task(user):
         'user': user['username'],
         'title': title,
         'description': description,
-        'deadline': deadline
+        'deadline': deadline,
+        'completed': "bajarilmagan"
     }
     tasks = laod_tasks()
     tasks.append(task)
 
     with open("data/tasks.txt", "a") as f:
-        f.write(f"{user['username']}, {task['title']}, {task['description']}, {task['deadline']}\n")
+        f.write(f"{user['username']}, {task['title']}, {task['description']}, {task['deadline']}, {task['completed']}\n")
 
     print_satus("task muvaffaqiyatli yaratildi", 'success')
+
+def print_tasks(tasks):
+    for counter, task in enumerate(tasks, start=1):
+        print(f"{counter}. {task['title']}, {task['description']}, {task['deadline']}, {task['completed']}")
+
+def show_tasks(user):
+    tasks = laod_tasks()
+
+    user_tasks = filter(
+        lambda task: task['user'] == user['username'],
+        tasks
+    )
+    print_tasks(user_tasks)
