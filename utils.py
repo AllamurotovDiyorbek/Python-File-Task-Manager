@@ -1,4 +1,6 @@
 from hashlib import sha256
+from printers import print_satus
+
 
 def is_valid_username(username: str) -> bool:
     return username.isalpha()
@@ -43,3 +45,36 @@ def get_user(username: str, password: str) -> dict:
             return user
     
     return None
+
+def laod_tasks() -> list[dict]:
+    with open('data/tasks.txt') as f:
+        tasks = []
+        for line in f.readlines():
+            user, title, description, deadline = line[:-1].split(', ')
+            tasks.append({
+                'user': user,
+                'title': title,
+                'description': description,
+                'deadline': deadline,
+            })
+
+    return tasks
+
+def create_task(user):
+    title = input("title: ")
+    description = input("description: ")
+    deadline = input("deadline: ")
+
+    task = {
+        'user': user['username'],
+        'title': title,
+        'description': description,
+        'deadline': deadline
+    }
+    tasks = laod_tasks()
+    tasks.append(task)
+
+    with open("data/tasks.txt", "a") as f:
+        f.write(f"{user['username']}, {task['title']}, {task['description']}, {task['deadline']}\n")
+
+    print_satus("task muvaffaqiyatli yaratildi", 'success')

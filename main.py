@@ -5,6 +5,7 @@ from utils import (
     is_valid_password, laod_users, 
     add_user, make_password,
     is_username, get_user,
+    create_task,
 )
 
 
@@ -27,7 +28,7 @@ def main() -> None:
                     print_sub_menu()
                     choice = input("> ")
                     if choice == '1':
-                        pass # TODO: create_task()
+                        create_task(user)
                     elif choice == '2':
                         pass # TODO: show_tasks()
                     elif choice == '3':
