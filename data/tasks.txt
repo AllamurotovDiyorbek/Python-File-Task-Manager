@@ -1,4 +1,6 @@
-alijon, kitob oqish, 10 bet kitob oqish, 9:00, bajarilmagan
+alijon, kitob oqish, 10 bet kitob oqish, 9:00, bajarilgan
 valijon, yugurish, ertalab 3 km, 6:00, bajarilmagan
-alijon, maktabga borish, 8 da boraman, 8:00, bajarilmagan
+alijon, maktabga borish, 8 da boraman, 8:00, bajarilgan
 jon, bozorga borish, kiyim olish, 10:00, bajarilmagan
+alijon, nimadir, fdasfasd, fsdfads, bajarilmagan
+alijon, , , , bajarilgan

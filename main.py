@@ -6,6 +6,8 @@ from utils import (
     add_user, make_password,
     is_username, get_user,
     create_task, show_tasks,
+    show_incompleted_tasks,
+    mark_as_completed,
 )
 
 
@@ -32,9 +34,9 @@ def main() -> None:
                     elif choice == '2':
                         show_tasks(user)
                     elif choice == '3':
-                        pass # TODO: show_incompleted_tasks()
+                        show_incompleted_tasks(user)
                     elif choice == '4':
-                        pass # TODO: mark_as_completed()
+                        mark_as_completed(user)
                     elif choice == '5':
                         user = None
                     else:

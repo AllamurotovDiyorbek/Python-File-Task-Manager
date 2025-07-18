@@ -93,3 +93,36 @@ def show_tasks(user):
         tasks
     )
     print_tasks(user_tasks)
+
+def show_incompleted_tasks(user):
+    tasks = laod_tasks()
+
+    user_tasks = filter(
+        lambda task: task['user'] == user['username'] and task['completed'] == 'bajarilmagan',
+        tasks
+    )
+    print_tasks(user_tasks)
+
+def mark_as_completed(user):
+    tasks = laod_tasks()
+
+    user_tasks = list(filter(
+        lambda task: task['user'] == user['username'] and task['completed'] == 'bajarilmagan',
+        tasks
+    ))
+
+    print_tasks(user_tasks)
+
+    i = int(input("qaysi taskni bajarildi qilmoqchisiz: ")) - 1
+    target = user_tasks[i]
+
+    with open("data/tasks.txt", "w") as f:
+        for task in tasks:
+            completed = ""
+            if task == target:
+                completed = 'bajarilgan'
+            else:
+                completed = task['completed']
+            f.write(f"{task['user']}, {task['title']}, {task['description']}, {task['deadline']}, {completed}\n")
+
+    print_satus("bajrildi", 'success')
