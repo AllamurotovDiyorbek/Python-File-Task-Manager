@@ -1,0 +1,7 @@
+Ali,('Dars qilish',),('Python',),2:00 3:00,bajirlmadi
+Ali,('ish',),('uyda',),3 soat,bajirlmadi
+Damir,('poyga',),('ertage',),2:00da,bajirlmadiDamir,('d',),('d',),d,bajirlmadi
+Damir,('2',),('2',),2,bajirlmadi
+Diyorbek,('i',),('1',),1,bajirlmadi
+Diyor,('ishkal',),('bollar',),1:00,bajirlmadi
+Diyorbek,('olma',),('meva',),4:00,bajirlmadi
