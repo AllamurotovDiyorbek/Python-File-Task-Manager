@@ -8,13 +8,13 @@ from set import (
     load_tasks,
     add_user,
     make_password,
-    get_user
-    # laod_users,
+    get_user,
+    laod_users
 )
 def main():
     lst=[]
+    users=laod_users()
     while True:
-        # users=laod_users()
         start_m()
         menyu=input("> ")
         if menyu=='1':  
