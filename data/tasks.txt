@@ -1,2 +1,4 @@
 0Olim, Uy qurish, 2 etaj, 5 year, bajarilmagan 
 Ali, kitob oqish, hokimyatning 48 qoidasi, 10 daqiqa, bajarilmagan 
+diyor, o, 2, 2, bajarilmagan 
+Ali, a, a, a, bajarilmagan 

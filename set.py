@@ -1,7 +1,6 @@
 from hashlib import sha224
 from out import print_status
 
-
 def is_password(password,confirm_password)->bool:
     return len(password) >= 8 and password==confirm_password
 def make_password(password):
@@ -54,15 +53,15 @@ def load_tasks():
                 'completed':u[4]                                                                                                                                                                                          
             })
     return tasks
-def show_tasks(user):
+def show_tasks(username):
     tasks=load_tasks()
     for c,i in enumerate(tasks, start=0):
-            if i['user']==user: 
-                print(f'{c} {i}')
+            if i['user']==username: 
+                return f'{c} {i}'
+            else:
+                pass
 def mark_tasks(user):
     pass
-        
-mark_tasks('Ali')   
 def view_spefic_tasks(user):
     with open("data/tasks.txt","a") as f:
         w=load_tasks()

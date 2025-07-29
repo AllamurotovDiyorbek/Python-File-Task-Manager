@@ -1,15 +1,15 @@
 from out import start_m,print_status,print_menyu
 from set import (
     is_password,
+    add_user,
+    laod_users,
+    get_user,
+    make_password,
     create_task,
     show_tasks,
     mark_tasks,
     view_spefic_tasks,
-    load_tasks,
-    add_user,
-    make_password,
-    get_user,
-    laod_users
+    load_tasks
 )
 def main():
     lst=[]
@@ -29,7 +29,7 @@ def main():
                 if choice=="1":
                     create_task(username)
                 elif choice=="2":
-                    show_tasks(username)    
+                    show_tasks(username)
                 elif choice=="3":
                     view_spefic_tasks(username)
                 elif choice=="4":
