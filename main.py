@@ -19,9 +19,10 @@ def main():
         menyu=input("> ")
         if menyu=='1':  
             username=input("Foydalanuvchi nomi: ")
-            password=input("Parol: ")
+            password=str(input("Parol: "))
             user=get_user(username,password)
-            while user:
+            print(user)
+            while user==True:
                 print_menyu()
                 print_status("Muvafiqiyatli kirdingiz","success2")
                 choice=input("> ")
@@ -41,10 +42,10 @@ def main():
                 print_status("Foydalanuvchi mavjud emas.","error")
         elif menyu=='2':
             username=input("Foydalanuvchi nomi: ")
-            parol=input("Parol: ")
+            password=input("Parol: ")
             parolniqaytar=input("Parolni Takrorlang: ")
            
-            if not is_password(parol,parolniqaytar):
+            if not is_password(password,parolniqaytar):
                 print_status("Parol 8 ta belgidan iborat bo`lsin va parol to`gri takrorlanishi kerak.","error2")  
            
             elif username in list(map(lambda user: user['username'],users)):
@@ -53,7 +54,7 @@ def main():
             elif username=="":
                 print_status("Usernameni kriting","error")          
             else:
-                add_user(username,make_password(parol),"data/users.txt")
+                add_user(username,password,"data/users.txt")
                 print_status("Ro`yxatdan o`tdingiz","success")
         elif menyu=='3':
             break
